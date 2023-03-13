@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_blocks_single_imgs",
+  "info": {
+    "displayName": "Single_img",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Single_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Single_img_title": {
+      "type": "string"
+    },
+    "block_width": {
+      "type": "enumeration",
+      "enum": [
+        "medium"
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.order{
+    // min-height: 100vh;
+    color: #fff;
+    height: calc(100vh - 80px) ;
+    .detail_wrapper{
+        margin: 0 auto;
+        width: 30%;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: left;
+
+        .detail{
+            display: flex;
+            // justify-content: space-around;
+        }
+        .product_detail{
+            width: 30%;
+            padding-right: 5%;
+            border-right: 1px solid #fff;
+            .ordered_product{
+                
+                &_name{
+                    border-bottom: 1px solid #fff;
+                }
+                .ordered_product_detail{
+                    display: flex;
+                    justify-content: flex-start;
+                    padding: 5px;
+    
+                    .product_price, .ordered_quantity, p{
+                        margin: 0;
+                        padding: 0 5px;
+                    }
+                }
+            }
+        }
+        .shipping_detail{
+            width: 60%;
+            padding-left: 5%;
+            .shipping_address{
+
+                &_title{
+                    border-bottom: 1px solid #fff;
+                }
+
+                &_text{
+                    padding: 0 10px;
+                }
+            }
+
+            .shipment_tracking{
+
+                &_title{
+                    border-bottom: 1px solid #fff;
+                }
+            }
+            .tracking_action{
+                display: flex;
+                padding: 0 10px;
+                // justify-content: flex-end;
+                &_button{
+                    width: 100px;
+                    padding: 5px 0;
+                    border-radius: 5px;
+                    border: none;
+                }
+                a{
+                    color: #000;
+                    text-decoration: none;
+                }
+            }
+            .cancel_action{
+                display: flex;
+                padding: 0 10px;
+                // justify-content: flex-end;
+                padding-top: 20px;
+                &_button{
+                    width: 100px;
+                    padding: 5px 0;
+                    border-radius: 5px;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

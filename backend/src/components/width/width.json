@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_width_widths",
+  "info": {
+    "displayName": "Width"
+  },
+  "options": {},
+  "attributes": {
+    "width": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "medium",
+        "small"
+      ]
+    }
+  }
+}

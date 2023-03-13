@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stripeID": {
+      "type": "string"
+    },
+    "total_price": {
+      "type": "decimal"
+    },
+    "Buyer_name": {
+      "type": "string"
+    },
+    "Buyer_email": {
+      "type": "string"
+    },
+    "Buyer_phone_number": {
+      "type": "string"
+    },
+    "shipment_tracking_link": {
+      "type": "string"
+    },
+    "shipping_handled": {
+      "type": "boolean"
+    },
+    "ordered_products": {
+      "type": "dynamiczone",
+      "components": [
+        "order-products.ordered-products"
+      ]
+    },
+    "easyShip_ID": {
+      "type": "string"
+    },
+    "Shipping_address": {
+      "type": "text"
+    }
+  }
+}

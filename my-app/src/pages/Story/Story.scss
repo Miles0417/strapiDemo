@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+.story {
+  width: 100%;
+  background-color: #2d2d2d;
+  color: white;
+  font-family: Roboto Mono, monospace;
+
+  .story_block_wrapper {
+    width: 100%;
+    .hero_block {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+
+      .hero_img_wrapper {
+        width: 100%;
+        height: inherit;
+
+        .hero_img {
+          width: 100%;
+          height: inherit;
+          object-fit: cover;
+        }
+      }
+
+      .hero_text_bttm_wrapper {
+        width: 97.5%;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        .hero_text_bttm {
+          text-align: left;
+          h1,
+          h2,
+          h3,
+          h4 {
+            margin: 0;
+            margin-bottom: 60px;
+          }
+        }
+      }
+      .hero_text_top_wrapper {
+        width: 97.5%;
+        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        .hero_text_top {
+          text-align: left;
+          padding-top: 100px;
+        }
+      }
+    }
+
+    .block {
+      width: 40%;
+      padding-top: 50px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+
+      .left_col,
+      .right_col {
+        width: 45%;
+        text-align: left;
+
+        &_img {
+          width: 100%;
+        }
+        &_text {
+          width: 100%;
+        }
+      }
+
+      .middle {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .single_col {
+        width: 100%;
+        text-align: justify;
+
+        &_text,
+        &_img {
+          width: 100%;
+          margin: 0;
+        }
+
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+
+    .medium {
+      width: 65%;
+      text-align: center;
+    }
+    .large {
+      width: 100%;
+    }
+  }
+}

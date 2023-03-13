@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blocks_blocks",
+  "info": {
+    "displayName": "Blocks",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "custom-components.text"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "custom-components.image"
+    },
+    "block_type": {
+      "type": "enumeration",
+      "enum": [
+        "hero_with_text_top",
+        "hero_with_text_bttm",
+        "text_right img_left",
+        "text_left img_right",
+        "double_img",
+        "double_text",
+        "single_img",
+        "single_text"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+.stories {
+  width: 100%;
+  background-color: #2d2d2d;
+  color: white;
+  font-family: Roboto Mono, monospace;
+
+  .grid {
+    width: calc(100% - 40px);
+    padding: 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-auto-flow: column dense;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    .content {
+      display: flex;
+      flex-direction: column;
+      grid-column: span 1;
+      .storyLink {
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        grid-column: span 1;
+      }
+      &_thumbnail {
+        width: 100%;
+        aspect-ratio: 1 / 1.55;
+        object-fit: cover;
+      }
+      &_title {
+        text-align: left;
+      }
+      &_description {
+        text-align: left;
+        font-size: 15px;
+      }
+    }
+    .content:hover {
+      .content_title {
+        text-decoration: underline;
+      }
+    }
+    .wide {
+      grid-column: span 2;
+      .content_thumbnail {
+        aspect-ratio: auto;
+      }
+    }
+  }
+}

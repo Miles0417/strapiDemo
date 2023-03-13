@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_slide_blocks",
+  "info": {
+    "displayName": "Slide Block"
+  },
+  "options": {},
+  "attributes": {
+    "slide_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "slider_text": {
+      "type": "richtext"
+    }
+  }
+}

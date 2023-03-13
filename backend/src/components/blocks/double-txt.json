@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_double_txts",
+  "info": {
+    "displayName": "Double_text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "left_col_text": {
+      "type": "richtext"
+    },
+    "right_col_text": {
+      "type": "richtext"
+    },
+    "block_width": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "medium"
+      ]
+    }
+  }
+}

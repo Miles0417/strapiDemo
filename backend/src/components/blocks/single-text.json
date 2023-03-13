@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_single_texts",
+  "info": {
+    "displayName": "Single_text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Single_text": {
+      "type": "richtext"
+    },
+    "block_width": {
+      "type": "enumeration",
+      "enum": [
+        "medium"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_home_component_home_images",
+  "info": {
+    "displayName": "Home-image-block",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "image_text": {
+      "type": "text"
+    },
+    "image_button_text": {
+      "type": "string"
+    },
+    "image_link": {
+      "type": "string"
+    }
+  }
+}

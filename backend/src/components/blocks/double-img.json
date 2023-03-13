@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_blocks_double_imgs",
+  "info": {
+    "displayName": "Double_img",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "block_width": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "medium"
+      ]
+    },
+    "left_col_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "left_col_img_title": {
+      "type": "string"
+    },
+    "right_col_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "right_col_img_title": {
+      "type": "string"
+    }
+  }
+}

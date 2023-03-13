@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_blocks_hero_full_txt_tops",
+  "info": {
+    "displayName": "Hero-full-Txt-top",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "hero_text": {
+      "type": "richtext"
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

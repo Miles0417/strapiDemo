@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_blocks_img_right_text_lefts",
+  "info": {
+    "displayName": "Img_right_Text_left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "left_col_text": {
+      "type": "richtext"
+    },
+    "right_col_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "right_col_img_title": {
+      "type": "string"
+    },
+    "block_width": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "medium"
+      ]
+    },
+    "text_position": {
+      "type": "enumeration",
+      "enum": [
+        "middle"
+      ]
+    }
+  }
+}

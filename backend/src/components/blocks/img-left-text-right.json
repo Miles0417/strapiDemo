@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_blocks_img_left_text_rights",
+  "info": {
+    "displayName": "Img_left_Text_right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Img_left": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Text_right": {
+      "type": "richtext"
+    },
+    "Img_left_title": {
+      "type": "string"
+    },
+    "col_left_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "col_left_img_title": {
+      "type": "string"
+    },
+    "block_width": {
+      "type": "enumeration",
+      "enum": [
+        "large",
+        "medium"
+      ]
+    },
+    "col_right_text": {
+      "type": "richtext"
+    },
+    "text_position": {
+      "type": "enumeration",
+      "enum": [
+        "middle"
+      ]
+    }
+  }
+}

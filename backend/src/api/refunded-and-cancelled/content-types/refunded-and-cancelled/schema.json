@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "refunded_and_cancelleds",
+  "info": {
+    "singularName": "refunded-and-cancelled",
+    "pluralName": "refunded-and-cancelleds",
+    "displayName": "Refunded and Cancelled",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order"
+    }
+  }
+}

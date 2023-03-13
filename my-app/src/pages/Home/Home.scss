@@ -1,0 +1,152 @@
+.home {
+  width: 100%;
+  // background-color: #2d2d2d;
+  position: absolute;
+  top: 0;
+  color: white;
+  font-family: Roboto Mono, monospace;
+  // font-family: "Archivo",sans-serif;
+
+  .home_blocks_wrapper {
+    width: 100%;
+    .link {
+      text-decoration: none;
+      color: #fff;
+    }
+    .hero_block {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+
+      .hero_img_wrapper {
+        width: 100%;
+        height: inherit;
+
+        .hero_img {
+          width: 100%;
+          height: inherit;
+          object-fit: cover;
+
+          // position: absolute;
+        }
+      }
+      .hero_text_bttm_wrapper {
+        width: 97.5%;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        text-align: left;
+        margin-bottom: 60px;
+        .hero_text_bttm {
+          text-align: left;
+          h1,
+          h2,
+          h3,
+          h4 {
+            margin: 0;
+          }
+        }
+        .button {
+          margin-top: 40px;
+          padding: 15px 30px;
+          border-radius: 25px;
+          border: 2px solid #fff;
+          background: transparent;
+          color: #fff;
+        }
+      }
+    }
+    .link:hover {
+      .button {
+        color: #000;
+        background-color: #fff;
+      }
+    }
+  }
+  .home_body {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      "num num one one"
+      "two three four five";
+    gap: 0;
+    &_block {
+      &_0 {
+        grid-area: num;
+      }
+      &_1 {
+        grid-area: one;
+      }
+      &_2 {
+        grid-area: two;
+      }
+      &_3 {
+        grid-area: three;
+      }
+      &_4 {
+        grid-area: four;
+      }
+      &_5 {
+        grid-area: five;
+      }
+    }
+
+    .block {
+      width: 100%;
+      aspect-ratio: 1/1;
+      position: relative;
+      .link {
+        text-decoration: none;
+        color: #fff;
+      }
+      .link:hover {
+        .linked_text {
+          strong {
+            text-decoration: underline;
+            text-decoration-color: 2px solid #fff;
+          }
+        }
+        .linked_button {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+      &_image {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+      &_linked {
+        text-align: right;
+        padding: 0px 30px 50px 0px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: linear-gradient(#19161600, #000000b1);
+        .linked {
+          &_text {
+            padding-bottom: 20px;
+          }
+          &_button {
+            background-color: transparent;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: 2px solid #fff;
+            color: #fff;
+          }
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+        p {
+          margin: 0;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

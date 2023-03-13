@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "singularName": "story",
+    "pluralName": "stories",
+    "displayName": "Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Dynamic_constructor": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.hero-full-txt-top",
+        "blocks.hero-full-txt-bottom",
+        "blocks.double-img",
+        "blocks.double-txt",
+        "blocks.img-left-text-right",
+        "blocks.img-right-text-left",
+        "blocks.single-img",
+        "blocks.single-text"
+      ]
+    },
+    "title": {
+      "type": "text"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "thumbnail_width": {
+      "type": "enumeration",
+      "enum": [
+        "wide",
+        "thin"
+      ]
+    }
+  }
+}

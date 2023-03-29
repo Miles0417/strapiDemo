@@ -10,7 +10,7 @@ export const Products = () => {
   const fetchData = async () => {
     try {
       const res = await axios.get(`${API_URL}/api/products?populate=*`);
-      setProduct(res.data.data);
+      setProduct(res?.data?.data);
     } catch (error) {
       console.log(error);
     }
@@ -25,19 +25,19 @@ export const Products = () => {
         return (
           <Link
             className="prodLink"
-            key={product.id}
-            to={`/photography-prints/${product.id}`}
+            key={product?.id}
+            to={`/photography-prints/${product?.id}`}
           >
-            <div className="product-info" key={product.id}>
+            <div className="product-info" key={product?.id}>
               <div className="product-image-container">
                 <img
                   className="product-image"
-                  src={`${API_URL}${product.attributes?.image?.data?.attributes?.formats.medium.url}`}
+                  src={`${API_URL}${product?.attributes?.image?.data?.attributes?.formats.medium.url}`}
                 />
               </div>
-              <h4 className="prodTitle">{product.attributes.title}</h4>
-              <p className="prodTitle">{product.attributes.description}</p>
-              <p>${product.attributes.price} EUR</p>
+              <h4 className="prodTitle">{product?.attributes?.title}</h4>
+              <p className="prodTitle">{product?.attributes?.description}</p>
+              <p>${product?.attributes?.price} EUR</p>
             </div>
           </Link>
         );

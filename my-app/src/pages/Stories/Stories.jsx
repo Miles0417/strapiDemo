@@ -12,7 +12,7 @@ export const Stories = () => {
       const thumbRes = await axios.get(
         `${API_URL}/api/stories?populate[0]=thumbnail`
       );
-      setStories(await thumbRes.data.data);
+      setStories(await thumbRes?.data?.data);
     } catch (error) {
       console.log(error);
     }
@@ -25,22 +25,24 @@ export const Stories = () => {
     <div className="stories">
       <div className="grid">
         {stories?.map((story, index) => {
-          switch (story.attributes.thumbnail_width) {
+          switch (story?.attributes?.thumbnail_width) {
             case "thin":
               return (
                 <div key={index} className="content">
                   <Link
                     className="storyLink"
-                    key={story.id}
-                    to={`/stories/${story.id}`}
+                    key={story?.id}
+                    to={`/stories/${story?.id}`}
                   >
                     <img
                       className="content_thumbnail"
                       src={`${API_URL}${story?.attributes?.thumbnail?.data?.attributes?.url}`}
                     />
-                    <h2 className="content_title">{story.attributes.title}</h2>
+                    <h2 className="content_title">
+                      {story?.attributes?.title}
+                    </h2>
                     <ReactMarkdown className="content_description">
-                      {story.attributes.description}
+                      {story?.attributes?.description}
                     </ReactMarkdown>
                   </Link>
                 </div>
@@ -51,15 +53,17 @@ export const Stories = () => {
                   <Link
                     className="storyLink"
                     key={story.id}
-                    to={`/stories/${story.id}`}
+                    to={`/stories/${story?.id}`}
                   >
                     <img
                       className="content_thumbnail"
                       src={`${API_URL}${story?.attributes?.thumbnail?.data?.attributes?.url}`}
                     />
-                    <h2 className="content_title">{story.attributes.title}</h2>
+                    <h2 className="content_title">
+                      {story?.attributes?.title}
+                    </h2>
                     <ReactMarkdown className="content_description">
-                      {story.attributes.description}
+                      {story?.attributes?.description}
                     </ReactMarkdown>
                   </Link>
                 </div>

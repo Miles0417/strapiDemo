@@ -20,8 +20,8 @@ export const Product = () => {
     try {
       const res = await axios.get(`${API_URL}/api/products/${id}?populate=*`);
       const response = await axios.get(`${API_URL}/api/products/?populate=*`);
-      setProduct(res.data.data);
-      setProducts(response.data.data);
+      setProduct(res?.data?.data);
+      setProducts(response?.data?.data);
       window.scrollTo(0, 0);
     } catch (error) {
       console.log(error);
@@ -39,11 +39,11 @@ export const Product = () => {
           <div className="product-image">
             <img
               className="img"
-              src={`${API_URL}${product.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              src={`${API_URL}${product?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
             />
           </div>
           <div className="product-info">
-            <h2 className="title">{product.attributes.title}</h2>
+            <h2 className="title">{product?.attributes?.title}</h2>
             <div className="quantity">
               <button
                 onClick={() =>
@@ -96,12 +96,12 @@ export const Product = () => {
                     <div className="product-image-container">
                       <img
                         className="product-image"
-                        src={`${API_URL}${prod.attributes.image.data.attributes.formats.medium.url}`}
+                        src={`${API_URL}${prod?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                       />
                     </div>
-                    <h3 className="prodTitle">{prod.attributes.title}</h3>
-                    <p className="prodTitle">{prod.attributes.description}</p>
-                    <p>${prod.attributes.price} EUR</p>
+                    <h3 className="prodTitle">{prod?.attributes?.title}</h3>
+                    <p className="prodTitle">{prod?.attributes?.description}</p>
+                    <p>${prod?.attributes?.price} EUR</p>
                   </div>
                 </Link>
               </div>

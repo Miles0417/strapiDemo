@@ -13,7 +13,7 @@ export const Home = () => {
       const response = await axios.get(
         `${API_URL}/api/home-page?populate[hero_text_bottom][populate]=*&populate[image_blocks][populate]=%2A`
       );
-      setBlocks(response.data.data.attributes);
+      setBlocks(response?.data?.data?.attributes);
     } catch (error) {
       console.log(error);
     }
@@ -32,12 +32,12 @@ export const Home = () => {
               <div className="hero_img_wrapper">
                 <img
                   className="hero_img"
-                  src={`${API_URL}${blocks.hero_text_bottom.hero_image.data.attributes.url}`}
+                  src={`${API_URL}${blocks?.hero_text_bottom?.hero_image?.data?.attributes?.url}`}
                 />
               </div>
               <div className="hero_text_bttm_wrapper">
                 <ReactMarkdown className="hero_text_bttm">
-                  {blocks.hero_text_bottom.hero_text}
+                  {blocks?.hero_text_bottom?.hero_text}
                 </ReactMarkdown>
                 <button className="button">READ MORE</button>
               </div>
@@ -47,7 +47,7 @@ export const Home = () => {
             {blocks?.image_blocks?.map((block, i) => {
               return (
                 <div key={i} className={`home_body_block_${i} block`}>
-                  <a className="link" href={`${block.image_link}`}>
+                  <a className="link" href={`${block?.image_link}`}>
                     <img
                       className="block_image"
                       src={`${API_URL}${block?.image?.data?.attributes?.url}`}

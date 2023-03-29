@@ -3,13 +3,14 @@ import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import "../Stories/Stories.scss";
 import axios from "axios";
+import { API_URL } from "../../constant";
 
 export const Stories = () => {
   const [stories, setStories] = useState();
   const fetchData = async () => {
     try {
       const thumbRes = await axios.get(
-        "http://localhost:1337/api/stories?populate[0]=thumbnail"
+        `${API_URL}/api/stories?populate[0]=thumbnail`
       );
       setStories(await thumbRes.data.data);
     } catch (error) {
@@ -35,7 +36,7 @@ export const Stories = () => {
                   >
                     <img
                       className="content_thumbnail"
-                      src={`http://localhost:1337${story?.attributes?.thumbnail?.data?.attributes?.url}`}
+                      src={`${API_URL}${story?.attributes?.thumbnail?.data?.attributes?.url}`}
                     />
                     <h2 className="content_title">{story.attributes.title}</h2>
                     <ReactMarkdown className="content_description">
@@ -54,7 +55,7 @@ export const Stories = () => {
                   >
                     <img
                       className="content_thumbnail"
-                      src={`http://localhost:1337${story?.attributes?.thumbnail?.data?.attributes?.url}`}
+                      src={`${API_URL}${story?.attributes?.thumbnail?.data?.attributes?.url}`}
                     />
                     <h2 className="content_title">{story.attributes.title}</h2>
                     <ReactMarkdown className="content_description">

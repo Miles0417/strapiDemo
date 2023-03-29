@@ -6,12 +6,11 @@ import { removeItem, resetCart } from "../../redux/cartReducer";
 import { useDispatch } from "react-redux";
 import { makeRequest } from "../../makeRequest";
 import { loadStripe } from "@stripe/stripe-js";
+import { API_URL } from "../../constant";
 
 const Cart = () => {
-  const [price, setPrice] = useState();
   const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
-
   const totalPrice = () => {
     let total = 0;
     products.forEach((item) => {
@@ -21,21 +20,18 @@ const Cart = () => {
     return total.toFixed(2);
   };
 
-  // useEffect(() => {
-  //   totalPrice()
-  // }, [price])
-  const loadingStripe = async (loadStripe) => {
-    try {
-      const stripePromise = await loadStripe(
-        "pk_test_51MO9V9JmTVjhXnqYYHhPnlcJLHBdD5ttwsEmfTHn2TsmJ1a7MPlCNtUWmQIlbMbMnsejxTKgbAe3ehMRiu31LXl600GvWhbUS3"
-      );
-      return stripePromise;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const loadingStripe = async (loadStripe) => {
+  //   try {
+  //     const stripePromise = await loadStripe(
+  //       "pk_test_51MO9V9JmTVjhXnqYYHhPnlcJLHBdD5ttwsEmfTHn2TsmJ1a7MPlCNtUWmQIlbMbMnsejxTKgbAe3ehMRiu31LXl600GvWhbUS3"
+  //     );
+  //     return stripePromise;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  const stripePromise = loadingStripe(loadStripe);
+  // const stripePromise = loadingStripe(loadStripe);
 
   const handlePayment = async (products, stripePromise) => {
     console.log(products, "PRODUCTS");
@@ -61,7 +57,7 @@ const Cart = () => {
       <h1>Products in your cart</h1>
       {products?.map((item) => (
         <div className="item" key={item.id}>
-          <img src={`${process.env.REACT_APP_API_URL}${item.img}`} alt="" />
+          <img src={`${API_URL}${item.img}`} alt="" />
           <div className="details">
             <h1>{item.title}</h1>
             <p>
@@ -80,25 +76,22 @@ const Cart = () => {
       ))}
       <div className="total">
         <span>SUBTOTAL</span>
-        <span>
-          ${totalPrice()}
-          {/* {price} */}
-        </span>
+        <span>${totalPrice()}</span>
       </div>
       <button
-        onClick={async () => await handlePayment(products, stripePromise)}
-        // onClick={() => {
-        //   // Send a post request to the Strapi route
-        //   axios.post('/stripe/pay', {
-        //     products
-        //   })
-        //     .then((response) => {
-        //       // Your code to handle the response
-        //     })
-        //     .catch((error) => {
-        //       // Your code to handle the error
-        //     });
-        // }}
+      // onClick={async () => await handlePayment(products, stripePromise)}
+      // onClick={() => {
+      //   // Send a post request to the Strapi route
+      //   axios.post('/stripe/pay', {
+      //     products
+      //   })
+      //     .then((response) => {
+      //       // Your code to handle the response
+      //     })
+      //     .catch((error) => {
+      //       // Your code to handle the error
+      //     });
+      // }}
       >
         PROCEED TO CHECKOUT
       </button>

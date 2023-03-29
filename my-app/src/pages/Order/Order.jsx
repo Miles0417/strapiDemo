@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { makeRequest } from "../../makeRequest";
-
 import "../Order/Order.scss";
+import { API_URL } from "../../constant";
 
 // const sdk = require('api')('@easyship/v2023.01#hatldcrss7o');
 
@@ -35,7 +35,7 @@ export const Order = () => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:1337/api/orders?populate[ordered_products][populate]=%2A"
+        `${API_URL}/api/orders?populate[ordered_products][populate]=%2A`
       );
       console.log(res.data.data[0]);
       setOrder(res.data.data[0]);

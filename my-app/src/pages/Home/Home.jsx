@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import "../Home/Home.scss";
+import { API_URL } from "../../constant";
 
 export const Home = () => {
   const [blocks, setBlocks] = useState();
@@ -10,9 +11,8 @@ export const Home = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:1337/api/home-page?populate[hero_text_bottom][populate]=*&populate[image_blocks][populate]=%2A`
+        `${API_URL}/api/home-page?populate[hero_text_bottom][populate]=*&populate[image_blocks][populate]=%2A`
       );
-      // console.log(response.data.data.attributes)
       setBlocks(response.data.data.attributes);
     } catch (error) {
       console.log(error);
@@ -20,11 +20,7 @@ export const Home = () => {
   };
 
   useEffect(() => {
-    console.log(blocks);
-  }, [blocks]);
-  useEffect(() => {
     fetchData();
-    // console.log(blocks)
   }, []);
 
   return (
@@ -36,7 +32,7 @@ export const Home = () => {
               <div className="hero_img_wrapper">
                 <img
                   className="hero_img"
-                  src={`http://localhost:1337${blocks.hero_text_bottom.hero_image.data.attributes.url}`}
+                  src={`${API_URL}${blocks.hero_text_bottom.hero_image.data.attributes.url}`}
                 />
               </div>
               <div className="hero_text_bttm_wrapper">
@@ -50,15 +46,11 @@ export const Home = () => {
           <div className="home_body">
             {blocks?.image_blocks?.map((block, i) => {
               return (
-                <div
-                  key={i}
-                  // style={{backgroundImage: `url(http://localhost:1337${block?.image?.data?.attributes?.url})`}}
-                  className={`home_body_block_${i} block`}
-                >
+                <div key={i} className={`home_body_block_${i} block`}>
                   <a className="link" href={`${block.image_link}`}>
                     <img
                       className="block_image"
-                      src={`http://localhost:1337${block?.image?.data?.attributes?.url}`}
+                      src={`${API_URL}${block?.image?.data?.attributes?.url}`}
                     />
                     <div className="block_linked">
                       <ReactMarkdown className="linked_text">

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
 import "../Product/Product.scss";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartReducer";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { API_URL } from "../../constant";
 
 export const Product = () => {
   const dispatch = useDispatch();
@@ -18,18 +18,11 @@ export const Product = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get(
-        `http://localhost:1337/api/products/${id}?populate=*`
-        // `
-        // ${process.env.REACT_APP_API_URL}/api/products/${id}?populate=*
-        // `
-      );
-      const response = await axios.get(
-        "http://localhost:1337/api/products/?populate=*"
-        // `${process.env.REACT_APP_API_URL}/api/products/?populate=*`
-      );
+      const res = await axios.get(`${API_URL}/api/products/${id}?populate=*`);
+      const response = await axios.get(`${API_URL}/api/products/?populate=*`);
       setProduct(res.data.data);
       setProducts(response.data.data);
+      window.scrollTo(0, 0);
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +30,7 @@ export const Product = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [window.location.href]);
 
   return (
     <div className="container">
@@ -46,7 +39,7 @@ export const Product = () => {
           <div className="product-image">
             <img
               className="img"
-              src={`http://localhost:1337${product.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+              src={`${API_URL}${product.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
             />
           </div>
           <div className="product-info">
@@ -62,24 +55,19 @@ export const Product = () => {
               {quantity}
               <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
             </div>
-            {/* <p>
-              Category:{" "}
-              <b>{product.attributes.categories.data[0].attributes.name}</b>
-            </p> */}
             <p className="description">{product?.attributes?.description}</p>
-
             <span>
               <b className="price"> $ {product?.attributes?.price}</b>
               <button
                 onClick={() =>
                   dispatch(
                     addToCart({
-                      id: product.id,
-                      title: product.attributes.title,
-                      desc: product.attributes.description,
-                      price: product.attributes.price,
-                      img: product.attributes.image.data.attributes.formats
-                        .thumbnail.url,
+                      id: product?.id,
+                      title: product?.attributes?.title,
+                      desc: product?.attributes?.description,
+                      price: product?.attributes?.price,
+                      img: product?.attributes?.image?.data?.attributes?.formats
+                        ?.thumbnail?.url,
                       quantity,
                     })
                   )
@@ -96,9 +84,9 @@ export const Product = () => {
       <div className="suggested">
         <h3>You might also like ...</h3>
         {products &&
-          products.map((prod) => {
+          products.map((prod, index) => {
             return (
-              <div className="suggested-product">
+              <div key={index} className="suggested-product">
                 <Link
                   className="prodLink"
                   key={prod.id}
@@ -108,7 +96,7 @@ export const Product = () => {
                     <div className="product-image-container">
                       <img
                         className="product-image"
-                        src={`http://localhost:1337${prod.attributes.image.data.attributes.formats.medium.url}`}
+                        src={`${API_URL}${prod.attributes.image.data.attributes.formats.medium.url}`}
                       />
                     </div>
                     <h3 className="prodTitle">{prod.attributes.title}</h3>
